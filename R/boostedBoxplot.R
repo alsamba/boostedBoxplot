@@ -5,9 +5,9 @@
 # Copyright (c) 2017 Orange
 # ---------------------------------------------------------------------------------
 ## Boosted Boxplot : add useful features to R boxplot function
-#' Boosted Boxplot
+#' @title Boosted Boxplot
 #'
-#' Add useful features to R classical boxplot
+#' @description  Add useful features to R classical boxplot
 #'
 #' @param y a numeric vector.
 #' @param x a factor vector.
@@ -23,6 +23,9 @@
 #' @param decreasing a boolean indicating whether categories order on x-axis according to their corresponding median \code{y} value.
 #' @param dynamic a boolean. If \code{TRUE}, an AmChart is return and the parameters \code{plot.mean} and \code{test.freq} are ignored.
 #' @return If \code{dynamicity} is \code{TRUE} it returns an object of class AmChart, else it returns a classical boxplot result list.
+#' @import stats
+#' @import graphics
+#' @import rAmCharts
 #' @export
 boostedBoxplot<-function(y,x, main="", labx=NULL,laby=NULL, plot.mean=T, text.freq=T, las=1, ylim=c(0,0), limitVisibleModalities=30, decreasing=NULL, dynamic=F){
 
@@ -57,7 +60,6 @@ boostedBoxplot<-function(y,x, main="", labx=NULL,laby=NULL, plot.mean=T, text.fr
   #dynamicity
   if(dynamic){
     dataf=data.frame(Y=y,X=x)
-    require(rAmCharts)
     rAmCharts::amBoxplot(Y~X,data=dataf,labelRotation = (las==2)*90, ylab = laby, main = main)
   }else{
     if(sum(ylim)==0){
