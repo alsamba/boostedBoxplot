@@ -1,2 +1,2 @@
 # boostedBoxplot
-Data visualization using Boxplots : draw boxplots including mean values to compare the distribution of a variable between several samples
+Draw customizable boxplots in R including the mean value and standard deviation plotting to compare the distribution of a continuous variable between several samples.
