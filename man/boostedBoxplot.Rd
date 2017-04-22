@@ -34,7 +34,7 @@ and the lowest \code{y} median values are plotted.}
 \item{dynamic}{a boolean. If \code{TRUE}, an AmChart is return and the parameters \code{plot.mean} and \code{test.freq} are ignored.}
 }
 \value{
-if \code{dynamicity} is \code{TRUE}: An object of class AmChart, else : a classical boxplot result list.
+If \code{dynamicity} is \code{TRUE} it returns an object of class AmChart, else it returns a classical boxplot result list.
 }
 \description{
 Add useful features to R classical boxplot
