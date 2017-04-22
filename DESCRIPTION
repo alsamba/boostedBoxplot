@@ -1,0 +1,16 @@
+Package: boostedBoxplot
+Type: Package
+Title: Boosted Boxplot
+Version: 0.1.0
+Description: The boostedBoxplot package add some useful customizable features to classical R boxplot
+Authors@R: c(
+    person(given = "Alassane", family = "Samba", email = "alassane.samba@orange.com", role = c("aut", "cre"))
+    )
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Collate:
+  'boostedBoxplot.R'
+Imports:
+    rAmCharts
+RoxygenNote: 6.0.1
