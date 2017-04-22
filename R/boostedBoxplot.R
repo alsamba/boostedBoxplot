@@ -22,7 +22,7 @@
 #' and the lowest \code{y} median values are plotted.
 #' @param decreasing a boolean indicating whether categories order on x-axis according to their corresponding median \code{y} value.
 #' @param dynamic a boolean. If \code{TRUE}, an AmChart is return and the parameters \code{plot.mean} and \code{test.freq} are ignored.
-#' @return if \code{dynamicity} is \code{TRUE}: An object of class AmChart, else : a classical boxplot result list.
+#' @return If \code{dynamicity} is \code{TRUE} it returns an object of class AmChart, else it returns a classical boxplot result list.
 #' @export
 boostedBoxplot<-function(y,x, main="", labx=NULL,laby=NULL, plot.mean=T, text.freq=T, las=1, ylim=c(0,0), limitVisibleModalities=30, decreasing=NULL, dynamic=F){
 
