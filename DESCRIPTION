@@ -1,14 +1,13 @@
 Package: boostedBoxplot
 Type: Package
 Title: Boosted Boxplot
-Version: 0.1.0
+Version: 1.1.1
 Description: The boostedBoxplot package adds some useful customizable features to classical R boxplot.
   you can for example easily plot the mean value and standard deviation with the boxplot, text the number 
   of values used to compute de box plot and compare distribution between the levels of a factor variable
   and sort boxplots by deacreasing of increasing median.
-Authors@R: c(
-    person(given = "Alassane", family = "Samba", email = "alassane.samba@orange.com", role = c("aut", "cre"))
-    )
+Author: Alassane Samba
+Maintainer: Alassane Samba <alassane.samba@orange.com>
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true

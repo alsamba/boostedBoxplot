@@ -27,7 +27,7 @@
 #' @import graphics
 #' @import rAmCharts
 #' @export
-boostedBoxplot<-function(y,x, main="", labx=NULL,laby=NULL, plot.mean=T, text.freq=T, las=1, ylim=c(0,0), limitVisibleModalities=30, decreasing=NULL, dynamic=F){
+boostedBoxplot<-function(y,x, main="", labx=NULL,laby=NULL, plot.mean=T, text.freq=T, las=1, ylim=NULL, limitVisibleModalities=30, decreasing=NULL, dynamic=F){
 
   xlab=""
   if(is.null(labx))labx=deparse(substitute(x))
@@ -62,7 +62,7 @@ boostedBoxplot<-function(y,x, main="", labx=NULL,laby=NULL, plot.mean=T, text.fr
     dataf=data.frame(Y=y,X=x)
     rAmCharts::amBoxplot(Y~X,data=dataf,labelRotation = (las==2)*90, ylab = laby, main = main)
   }else{
-    if(sum(ylim)==0){
+    if(is.null(ylim)){
       rb<-boxplot(y~x, main=main, xlab=xlab, ylab=laby, las=las)
       grid()
       #rb<-boxplot(y~x, main=main, xlab=xlab, ylab=laby, las=las, add=T)
