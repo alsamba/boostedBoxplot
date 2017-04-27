@@ -27,15 +27,21 @@
 #' @import graphics
 #' @import rAmCharts
 #' @export
-boostedBoxplot<-function(y,x, main="", labx=NULL,laby=NULL, plot.mean=T, text.freq=T, las=1, ylim=NULL, limitVisibleModalities=30, decreasing=NULL, dynamic=F){
+boostedBoxplot<-function(y,x=NULL, main="", labx=NULL,laby=NULL, plot.mean=T, text.freq=T, las=1, ylim=NULL, limitVisibleModalities=30, decreasing=NULL, dynamic=F){
+
 
   xlab=""
-  if(is.null(labx))labx=deparse(substitute(x))
+  if(is.null(labx)&!is.null(x))labx=deparse(substitute(x))
   if(is.null(laby))laby=deparse(substitute(y))
   if(main==""){
     main=labx
   }else{
     xlab=labx
+  }
+  if(is.null(x)){
+    x=rep(laby,length(y))
+    xlab=laby
+    laby=""
   }
   x=droplevels(as.factor(x))
   p=length(levels(as.factor(x)))
@@ -74,7 +80,7 @@ boostedBoxplot<-function(y,x, main="", labx=NULL,laby=NULL, plot.mean=T, text.fr
     if(plot.mean){
       mn.t <- tapply(y, x, mean, na.rm=T)
       sd.t <- tapply(y, x, sd, na.rm=T)
-      xi <- 0.3 + seq(rb$n)
+      xi <- 0.3-(length(levels(droplevels(as.factor(x))))==1)*0.15 + 1:length(rb$n)
       points(xi, mn.t, col = "red", pch = 18, cex=1)
       arrows(xi, mn.t - sd.t, xi, mn.t + sd.t,code = 3, col = "red", angle = 75, length = .1, lwd = 1)
     }
